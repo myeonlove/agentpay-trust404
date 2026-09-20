@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AgentPay — controlled autonomous payments for AI agents." />
+  <title>AgentPay · Autonomous Security Agent</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308111f'/%3E%3Cpath d='M18 44 31 17h5l11 27h-7l-2-6H27l-3 6zm12-12h6l-3-8z' fill='%2339d9ff'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <div class="brand"><span class="brand-mark">A</span><span>AgentPay</span></div>
+      <div class="network"><span class="dot"></span> Base Sepolia</div>
+    </header>
+
+    <section class="workspace">
+      <aside class="profile card">
+        <p class="eyebrow">AGENT PROFILE</p>
+        <h1>Security Agent 01</h1>
+        <div class="divider"></div>
+        <dl>
+          <div><dt>Identity</dt><dd class="mono cyan">did:key:z6Mk9Qx7…</dd></div>
+          <div><dt>Wallet</dt><dd class="mono">0x72A9…8F21</dd></div>
+        </dl>
+        <div class="policy">
+          <p class="eyebrow">DELEGATED AUTHORITY</p>
+          <p><span>✓</span> ContractGuard API</p>
+          <p><span>✓</span> Max 0.10 USDC / call</p>
+          <p><span>✓</span> Daily budget 1.00 USDC</p>
+          <p><span>✓</span> Expires Sep 30, 2026</p>
+        </div>
+        <div class="balance"><small>WALLET BALANCE</small><strong><span id="balance">3.42</span> USDC</strong></div>
+      </aside>
+
+      <section class="agent card">
+        <div class="agent-heading">
+          <div><p class="eyebrow">AUTONOMOUS SECURITY AGENT</p><h2>Purchase contract intelligence</h2></div>
+          <button class="reset" id="resetBtn" type="button">Reset demo</button>
+        </div>
+        <label for="contract">Contract address</label>
+        <div class="task-row">
+          <input id="contract" value="0x83fd0bdddafa9a499582899d49515060c361b9aa" spellcheck="false" />
+          <button id="runBtn" type="button"><span>Run agent</span><span class="arrow">→</span></button>
+        </div>
+
+        <div class="timeline" id="timeline" aria-live="polite">
+          <div class="empty-state" id="emptyState">
+            <div class="orb">A</div>
+            <p>Ready to analyze</p>
+            <span>The agent will discover a paid API, verify its delegated authority, and complete payment autonomously.</span>
+          </div>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <div><p class="eyebrow danger">CONTRACT RISK</p><strong>HIGH</strong></div>
+          <div class="result-copy"><b>Potential honeypot behavior detected</b><span>Sell restriction and owner-controlled transfer logic found.</span></div>
+          <a href="#transaction" id="txLink">View testnet transaction ↗</a>
+        </div>
+      </section>
+    </section>
+
+    <footer><span>DID identity</span><i>→</i><span>Verifiable authorization</span><i>→</i><span>x402 payment</span></footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
